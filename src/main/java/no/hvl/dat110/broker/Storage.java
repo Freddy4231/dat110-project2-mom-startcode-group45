@@ -94,13 +94,24 @@ public class Storage {
 
 		// TODO: add the user as subscriber to the topic
 		
-    		
+        Set<String> users = subscriptions.get(topic);
+
+        if(users != null) {
+            users.add(user);
+        }
 	}
 
 	public void removeSubscriber(String user, String topic) {
 
 		// TODO: remove the user as subscriber to the topic
 
-		throw new UnsupportedOperationException(TODO.method());
+
+        Set<String> users = subscriptions.get(topic);
+
+        if(users != null) {
+            users.remove(user);
+        }
+
+
 	}
 }
